@@ -12,9 +12,14 @@ import org.minestruck.coredata.database.connections.MySQL;
  */
 @Getter
 @Accessors(fluent = true)
-public class ConnectionManager {
+public class ConnectionManager implements AutoCloseable {
     private final MySQL mysql;
     public ConnectionManager(MCServer server) {
         mysql = new MySQL(System.getenv("MYSQL_CONNECTION_STRING"), System.getenv("MYSQL_USERNAME"), System.getenv("MYSQL_PASSWORD"), server);
+    }
+
+    @Override
+    public void close() throws Exception {
+        mysql.close();
     }
 }

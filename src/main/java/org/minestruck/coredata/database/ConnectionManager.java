@@ -31,5 +31,6 @@ public class ConnectionManager implements AutoCloseable {
     @Override
     public void close() throws Exception {
         mysql.close();
+        redis.close();
     }
 }

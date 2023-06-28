@@ -1,5 +1,7 @@
 package org.minestruck.coredata;
 
+import org.slf4j.Logger;
+
 /**
  * @author 254n_m
  * @since 2023/06/27 9:30 PM
@@ -7,5 +9,5 @@ package org.minestruck.coredata;
  */
 public interface MCServer {
     void shutdownServer();
-    void log(String format, Object... args);
+    Logger logger();
 }

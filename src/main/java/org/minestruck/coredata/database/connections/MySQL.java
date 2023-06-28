@@ -28,8 +28,7 @@ public class MySQL implements Database {
             result.next();
             server.logger().info("MySQL test query: {}", result.getString(1));
         } catch (Throwable t) {
-            server.log("Failed to connect to mysql database due to %s please see stacktrace below for more info!", t.getClass().getSimpleName());
-            t.printStackTrace();
+            server.logger().error("Failed to connect to mysql database due to %s please see stacktrace below for more info!", t);
             server.shutdownServer();
         }
     }

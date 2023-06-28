@@ -15,6 +15,6 @@ import org.minestruck.coredata.database.connections.MySQL;
 public class ConnectionManager {
     private final MySQL mysql;
     public ConnectionManager(MCServer server) {
-        mysql = new MySQL(System.getenv("MYSQL_CONNECTION_STRING"), System.getenv("MYSQL_USERNAME"), System.getenv("MYSQl_PASSWORD"), server);
+        mysql = new MySQL(System.getenv("MYSQL_CONNECTION_STRING"), System.getenv("MYSQL_USERNAME"), System.getenv("MYSQL_PASSWORD"), server);
     }
 }

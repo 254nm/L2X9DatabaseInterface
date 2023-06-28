@@ -6,7 +6,7 @@ import com.velocitypowered.api.proxy.ProxyServer;
 import org.minestruck.coredata.database.ConnectionManager;
 import org.slf4j.Logger;
 
-@Plugin(id = "MineStruckCoreData", name = "My First Plugin", version = "1.0-SNAPSHOT", authors = {"254n_m"})
+@Plugin(id = "minestruckcoredata", name = "MineStruckCoreData", version = "1.0-SNAPSHOT", authors = {"254n_m"})
 public final class VelocityMain implements MCServer {
     private final ProxyServer server;
     private final Logger logger;

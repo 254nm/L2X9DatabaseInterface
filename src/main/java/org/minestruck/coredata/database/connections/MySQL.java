@@ -1,5 +1,6 @@
 package org.minestruck.coredata.database.connections;
 
+import com.mysql.jdbc.Driver;
 import lombok.Getter;
 import lombok.experimental.Accessors;
 import org.minestruck.coredata.MCServer;
@@ -7,6 +8,7 @@ import org.minestruck.coredata.database.Database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 
 /**
  * @author 254n_m
@@ -22,7 +24,9 @@ public class MySQL implements Database {
     public MySQL(String connectionString, String username, String password, MCServer server) {
         try {
             connection = DriverManager.getConnection(connectionString, username, password);
-            server.log("MySQL test query: %s", connection.createStatement().executeQuery("SELECT CURRENT_DATE()").getString(0));
+            ResultSet result = connection.createStatement().executeQuery("SELECT CURRENT_DATE()");
+            result.next();
+            server.log("MySQL test query: %s", result.getString(1));
         } catch (Throwable t) {
             server.log("Failed to connect to mysql database due to %s please see stacktrace below for more info!", t.getClass().getSimpleName());
             t.printStackTrace();

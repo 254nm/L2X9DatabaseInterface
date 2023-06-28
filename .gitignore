@@ -8,6 +8,11 @@
 # IntelliJ
 out/
 
+#Gradle
+.gradle/
+
+!local-repo/
+
 # Compiled class file
 *.class
 

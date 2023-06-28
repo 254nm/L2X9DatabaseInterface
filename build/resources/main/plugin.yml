@@ -1,4 +1,6 @@
 name: MinestruckCoreData
-version: '${version}'
-main: org.minestruck.coredata.MinestruckCoreData
+version: '1.0-SNAPSHOT'
+main: org.minestruck.coredata.BukkitMain
 api-version: '1.19'
+authors:
+  - 254n_m

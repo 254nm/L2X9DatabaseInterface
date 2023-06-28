@@ -1,5 +1,5 @@
 plugins {
-    id("java")
+    `java-library`
     id("com.github.johnrengelman.shadow") version "7.1.2"
 }
 
@@ -14,9 +14,12 @@ repositories {
         name = "papermc-repo"
         url = uri("https://repo.papermc.io/repository/maven-public/")
     }
+    maven(File(projectDir, "local-repo").toURI().toURL())
 }
 
 dependencies {
+    implementation("com.mysql:jdbc:8.0.33")
+
     compileOnly("io.papermc.paper:paper-api:1.19.4-R0.1-SNAPSHOT")
 
     compileOnly("com.velocitypowered:velocity-api:3.1.1")

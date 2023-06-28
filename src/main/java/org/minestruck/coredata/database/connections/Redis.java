@@ -1,5 +1,7 @@
 package org.minestruck.coredata.database.connections;
 
+import lombok.Getter;
+import lombok.experimental.Accessors;
 import org.minestruck.coredata.MCServer;
 import org.minestruck.coredata.database.Database;
 import redis.clients.jedis.BinaryJedisPubSub;
@@ -12,6 +14,8 @@ import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.BiConsumer;
 
+@Getter
+@Accessors(fluent = true)
 public class Redis implements Database {
     private MCServer server;
     private JedisPool pool;

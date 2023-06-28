@@ -26,7 +26,7 @@ public class MySQL implements Database {
             connection = DriverManager.getConnection(connectionString, username, password);
             ResultSet result = connection.createStatement().executeQuery("SELECT CURRENT_DATE()");
             result.next();
-            server.log("MySQL test query: %s", result.getString(1));
+            server.logger().info("MySQL test query: {}", result.getString(1));
         } catch (Throwable t) {
             server.log("Failed to connect to mysql database due to %s please see stacktrace below for more info!", t.getClass().getSimpleName());
             t.printStackTrace();

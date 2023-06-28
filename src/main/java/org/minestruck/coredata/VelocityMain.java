@@ -24,7 +24,7 @@ public final class VelocityMain implements MCServer {
     }
 
     @Override
-    public void log(String format, Object... args) {
-        logger.info(format, args);
+    public Logger logger() {
+        return logger;
     }
 }

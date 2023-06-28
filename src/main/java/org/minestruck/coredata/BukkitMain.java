@@ -5,13 +5,14 @@ import lombok.experimental.Accessors;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.minestruck.coredata.database.ConnectionManager;
+import org.slf4j.Logger;
 
 import java.sql.SQLException;
-import java.util.logging.Level;
 
 @Accessors(fluent = true)
 public final class BukkitMain extends JavaPlugin implements MCServer {
-   @Getter private static ConnectionManager connectionManager;
+    @Getter
+    private static ConnectionManager connectionManager;
 
     @Override
     public void onEnable() {
@@ -34,7 +35,7 @@ public final class BukkitMain extends JavaPlugin implements MCServer {
     }
 
     @Override
-    public void log(String format, Object... args) {
-        getLogger().log(Level.INFO, String.format(format, args));
+    public Logger logger() {
+        return logger();
     }
 }

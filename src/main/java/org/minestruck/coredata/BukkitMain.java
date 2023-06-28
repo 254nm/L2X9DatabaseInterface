@@ -22,10 +22,10 @@ public final class BukkitMain extends JavaPlugin implements MCServer {
     @Override
     public void onDisable() {
         try {
-            connectionManager.mysql().connection().close();
-        } catch (SQLException e) { //Shouldn't happen
+            connectionManager.close();
+        } catch (Throwable t) { //Shouldn't happen
             System.out.println("Failed to close database connection???");
-            e.printStackTrace();
+            t.printStackTrace();
         }
     }
 

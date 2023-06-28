@@ -1,0 +1,4 @@
+name: MinestruckCoreData
+version: '${version}'
+main: org.minestruck.coredata.MinestruckCoreData
+api-version: '1.19'

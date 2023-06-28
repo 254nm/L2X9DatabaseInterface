@@ -1,6 +1,8 @@
 package org.minestruck.coredata;
 
 import com.google.inject.Inject;
+import com.velocitypowered.api.event.Subscribe;
+import com.velocitypowered.api.event.proxy.ProxyShutdownEvent;
 import com.velocitypowered.api.plugin.Plugin;
 import com.velocitypowered.api.proxy.ProxyServer;
 import org.minestruck.coredata.database.ConnectionManager;
@@ -15,7 +17,16 @@ public final class VelocityMain implements MCServer {
     public VelocityMain(ProxyServer server, Logger logger) {
         this.server = server;
         this.logger = logger;
-
+        connectionManager = new ConnectionManager(this);
+    }
+    @Subscribe
+    public void onShutdown(ProxyShutdownEvent event) {
+        try {
+            connectionManager.close();
+        } catch (Throwable t) { //Shouldn't happen
+            System.out.println("Failed to close database connection???");
+            t.printStackTrace();
+        }
     }
 
     @Override

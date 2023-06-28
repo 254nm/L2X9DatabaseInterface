@@ -34,11 +34,6 @@ public class VelocityMain implements DataPlugin {
         this.onDisable();
     }
 
-    @Override
-    public Logger logger() {
-        return logger;
-    }
-
     public static VelocityMain getInstance() {
         return instance;
     }

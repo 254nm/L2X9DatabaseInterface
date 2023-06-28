@@ -11,4 +11,6 @@ public interface MCServer {
     <S> S getHandle();
 
     void shutdown();
+    Logger logger();
+
 }

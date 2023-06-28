@@ -26,7 +26,7 @@ public class Redis implements Database {
             this.server = server;
         } catch (Throwable t) {
             server.logger().error("Failed to setup Redis", t);
-            server.shutdownServer();
+            server.shutdown();
         }
     }
 
@@ -35,7 +35,7 @@ public class Redis implements Database {
             return jedis;
         } catch (Throwable t) {
             server.logger().error("Failed to get resource from pool", t);
-            server.shutdownServer();
+            server.shutdown();
             return null;
         }
     }
@@ -75,7 +75,7 @@ public class Redis implements Database {
                 this.getResource().subscribe(sub, channelsBytes);
             } catch (Throwable t) {
                 server.logger().error("Failed to subscribe to redis channels", t);
-                server.shutdownServer();
+                server.shutdown();
             }
         });
 

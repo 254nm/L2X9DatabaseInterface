@@ -2,6 +2,7 @@ package org.minestruck.coredata.platform.velocity;
 
 import lombok.RequiredArgsConstructor;
 import org.minestruck.coredata.platform.MCServer;
+import org.slf4j.Logger;
 
 @RequiredArgsConstructor(access = lombok.AccessLevel.PROTECTED)
 public class VelocityServer implements MCServer {
@@ -16,5 +17,10 @@ public class VelocityServer implements MCServer {
     @Override
     public void shutdown() {
         plugin.proxy().shutdown();
+    }
+
+    @Override
+    public Logger logger() {
+        return plugin.logger();
     }
 }

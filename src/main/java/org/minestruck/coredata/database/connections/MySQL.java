@@ -29,7 +29,7 @@ public class MySQL implements Database {
         } catch (Throwable t) {
             server.logger().error("Failed to connect to mysql database due to {} please see stacktrace below for more info!", t.getClass().getSimpleName());
             t.printStackTrace();
-            server.shutdownServer();
+            server.shutdown();
         }
     }
 

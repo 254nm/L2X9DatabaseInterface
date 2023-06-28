@@ -28,9 +28,4 @@ public final class BukkitMain extends JavaPlugin implements DataPlugin {
     public void onDisable() {
         DataPlugin.super.onDisable();
     }
-
-    @Override
-    public Logger logger() {
-        return logger();
-    }
 }

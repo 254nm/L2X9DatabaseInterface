@@ -33,4 +33,10 @@ public class MySQL implements Database {
             server.shutdownServer();
         }
     }
+
+
+    @Override
+    public void close() throws Exception {
+        this.connection.close();
+    }
 }

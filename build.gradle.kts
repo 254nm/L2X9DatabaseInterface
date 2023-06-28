@@ -19,6 +19,7 @@ repositories {
 
 dependencies {
     implementation("com.mysql:jdbc:8.0.33")
+    implementation("redis.clients:jedis:4.4.3")
 
     compileOnly("io.papermc.paper:paper-api:1.19.4-R0.1-SNAPSHOT")
 

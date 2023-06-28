@@ -1,4 +1,4 @@
-package org.minestruck.coredata;
+package org.minestruck.coredata.platform;
 
 import org.slf4j.Logger;
 
@@ -8,6 +8,7 @@ import org.slf4j.Logger;
  * This file was created as a part of CoreData
  */
 public interface MCServer {
-    void shutdownServer();
-    Logger logger();
+    <S> S getHandle();
+
+    void shutdown();
 }

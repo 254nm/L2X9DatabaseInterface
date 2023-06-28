@@ -1,9 +1,8 @@
 package org.minestruck.coredata.database.connections;
 
-import com.mysql.jdbc.Driver;
 import lombok.Getter;
 import lombok.experimental.Accessors;
-import org.minestruck.coredata.MCServer;
+import org.minestruck.coredata.platform.MCServer;
 import org.minestruck.coredata.database.Database;
 
 import java.sql.Connection;

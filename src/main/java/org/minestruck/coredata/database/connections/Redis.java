@@ -2,7 +2,7 @@ package org.minestruck.coredata.database.connections;
 
 import lombok.Getter;
 import lombok.experimental.Accessors;
-import org.minestruck.coredata.MCServer;
+import org.minestruck.coredata.platform.MCServer;
 import org.minestruck.coredata.database.Database;
 import redis.clients.jedis.BinaryJedisPubSub;
 import redis.clients.jedis.Jedis;

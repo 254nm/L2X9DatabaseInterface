@@ -2,7 +2,7 @@ package org.minestruck.coredata.database;
 
 import lombok.Getter;
 import lombok.experimental.Accessors;
-import org.minestruck.coredata.MCServer;
+import org.minestruck.coredata.platform.MCServer;
 import org.minestruck.coredata.database.connections.MySQL;
 import org.minestruck.coredata.database.connections.Redis;
 

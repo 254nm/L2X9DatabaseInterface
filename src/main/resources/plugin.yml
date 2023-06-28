@@ -1,6 +1,6 @@
 name: MinestruckCoreData
 version: '1.1-SNAPSHOT'
-main: org.minestruck.coredata.BukkitMain
+main: org.minestruck.coredata.platform.bukkit.BukkitMain
 api-version: '1.19'
 authors:
   - 254n_m

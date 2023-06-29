@@ -1,10 +1,10 @@
-package org.minestruck.coredata.plugin;
+package me.l2x9.data.plugin;
 
-import org.minestruck.coredata.platform.MCServer;
-import org.minestruck.coredata.database.ConnectionManager;
-import org.minestruck.coredata.platform.Platform;
-import org.minestruck.coredata.platform.bukkit.BukkitMain;
-import org.minestruck.coredata.platform.velocity.VelocityMain;
+import me.l2x9.data.platform.MCServer;
+import me.l2x9.data.database.ConnectionManager;
+import me.l2x9.data.platform.Platform;
+import me.l2x9.data.platform.bukkit.BukkitMain;
+import me.l2x9.data.platform.velocity.VelocityMain;
 public interface DataPlugin {
     MCServer server();
 

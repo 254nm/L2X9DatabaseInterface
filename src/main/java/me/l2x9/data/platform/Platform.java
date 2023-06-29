@@ -1,4 +1,4 @@
-package org.minestruck.coredata.platform;
+package me.l2x9.data.platform;
 
 public enum Platform {
     BUKKIT,

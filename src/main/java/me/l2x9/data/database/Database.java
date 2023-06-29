@@ -1,4 +1,4 @@
-package org.minestruck.coredata.database;
+package me.l2x9.data.database;
 
 /**
  * @author 254n_m

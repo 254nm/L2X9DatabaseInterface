@@ -1,9 +1,9 @@
-package org.minestruck.coredata.database.connections;
+package me.l2x9.data.database.connections;
 
 import lombok.Getter;
 import lombok.experimental.Accessors;
-import org.minestruck.coredata.platform.MCServer;
-import org.minestruck.coredata.database.Database;
+import me.l2x9.data.platform.MCServer;
+import me.l2x9.data.database.Database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -22,6 +22,7 @@ public class MySQL implements Database {
 
     public MySQL(String connectionString, String username, String password, MCServer server) {
         try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection(connectionString, username, password);
             ResultSet result = connection.createStatement().executeQuery("SELECT CURRENT_DATE()");
             result.next();

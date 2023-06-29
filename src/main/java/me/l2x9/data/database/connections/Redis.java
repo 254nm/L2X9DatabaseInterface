@@ -1,9 +1,9 @@
-package org.minestruck.coredata.database.connections;
+package me.l2x9.data.database.connections;
 
 import lombok.Getter;
 import lombok.experimental.Accessors;
-import org.minestruck.coredata.platform.MCServer;
-import org.minestruck.coredata.database.Database;
+import me.l2x9.data.platform.MCServer;
+import me.l2x9.data.database.Database;
 import redis.clients.jedis.BinaryJedisPubSub;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
@@ -13,6 +13,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.BiConsumer;
+import java.util.stream.Collectors;
 
 @Getter
 @Accessors(fluent = true)
@@ -61,7 +62,7 @@ public class Redis implements Database {
     }
 
     public AutoCloseable subscribe(List<String> channels, BiConsumer<String, ByteBuffer> callback) {
-        byte[][] channelsBytes = channels.stream().map(String::getBytes).toList().toArray(new byte[0][0]);
+        byte[][] channelsBytes = channels.stream().map(String::getBytes).collect(Collectors.toList()).toArray(new byte[0][0]);
 
         BinaryJedisPubSub sub = new BinaryJedisPubSub() {
             @Override

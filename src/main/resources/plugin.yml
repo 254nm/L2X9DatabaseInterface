@@ -1,6 +1,5 @@
-name: MinestruckCoreData
+name: L2X9DBInterface
 version: '1.1-SNAPSHOT'
-main: org.minestruck.coredata.platform.bukkit.BukkitMain
-api-version: '1.19'
+main: me.l2x9.data.platform.bukkit.BukkitMain
 authors:
   - 254n_m

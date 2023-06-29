@@ -1,5 +1,6 @@
-package org.minestruck.coredata.platform;
+package me.l2x9.data.platform;
 
+import me.l2x9.data.config.DataConfig;
 import org.slf4j.Logger;
 
 /**
@@ -12,5 +13,6 @@ public interface MCServer {
 
     void shutdown();
     Logger logger();
+    DataConfig config();
 
 }

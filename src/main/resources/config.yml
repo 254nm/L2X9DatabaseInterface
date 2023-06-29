@@ -1,0 +1,9 @@
+MySQL:
+  Username: "example"
+  Password: "example"
+  ConnectionString: "jdbc:mysql://<ip>:<port>/<db>"
+Redis:
+  Host: "<IP>"
+  Port: 1234
+  Username: ""
+  Password: ""

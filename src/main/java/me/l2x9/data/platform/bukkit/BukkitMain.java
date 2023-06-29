@@ -1,11 +1,10 @@
-package org.minestruck.coredata.platform.bukkit;
+package me.l2x9.data.platform.bukkit;
 
 import lombok.Getter;
 import lombok.experimental.Accessors;
+import me.l2x9.data.database.ConnectionManager;
+import me.l2x9.data.plugin.DataPlugin;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.minestruck.coredata.database.ConnectionManager;
-import org.minestruck.coredata.plugin.DataPlugin;
-import org.slf4j.Logger;
 
 @Getter
 @Accessors(fluent = true)
@@ -20,6 +19,7 @@ public final class BukkitMain extends JavaPlugin implements DataPlugin {
 
     @Override
     public void onEnable() {
+        saveDefaultConfig();
         connectionManager = new ConnectionManager(server);
         instance = this;
     }
